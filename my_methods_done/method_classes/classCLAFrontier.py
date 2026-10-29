@@ -122,7 +122,7 @@ class CLAFrontier:
                    label=f'Optimal (Sharpe = {opt["sharpe"]:.2f})')
         
         # Рисуем линию CML
-        x_max = max(self.raw_volatilities) * 1.1
+        x_max = max(self.raw_volatilities)
         x_cml = np.linspace(0, x_max, 100)
         y_cml = rf + opt['sharpe'] * x_cml
         ax.plot(x_cml, y_cml, 'g--', linewidth=1.5, label='CML (rf=0)')
